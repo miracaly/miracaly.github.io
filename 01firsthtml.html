@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			#a{
+				font-size: 14px;
+				text-indent: 2em;
+				line-height: 1.5em;
+			}
+		</style>
+	</head>
+	<body>
+		<!--emmet-->
+		
+		
+		
+		<a href="#" onclick="document.write('helloworld')">链接</a>
+		<a href="#" onclick="saywhat('helloJavascript')">链接2</a>
+		<a id=lk href="#">链接3</a>
+		
+		<script type="text/javascript">
+			function saywhat(str){
+				document.write(str);
+			}	
+			lk = document.getElementById('lk');
+			lk.onclick = function(){
+				document.write("hello3world");
+			
+			}
+		</script>
+	</body>
+</html>
