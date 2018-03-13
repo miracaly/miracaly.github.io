@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--
+			html
+				提示文本
+				输入框
+				按钮
+				结果提示
+			CSS
+				布局和样式
+			JS	
+				程序初始化
+					生成一个0=<A=<50的随机整数    Math.random   parseInt
+					定义个次数的变量 Times=6
+				判断
+					获取用户输入的数字B
+						B不是数字  怀疑智商
+						B<0或B>50 再怀疑智商
+					B和A的关系
+						B==A  猜对了
+						B>A   有点大
+						B<A   有点小
+					
+					Times--
+					
+					if(Times<=0){
+						游戏结束了
+					}
+		-->
+		<div>猜数字（0-50），6次机会</div>
+		<input type="text" name="num" id="num" />
+		<input type="button" value="猜" id="btn" />
+		<div id="info">结果提示:</div>
+		<script type="text/javascript">
+			var oNum=document.getElementById("num");
+			var oBtn=document.getElementById("btn");
+			var oInfo=document.getElementById("info");
+			var numberRight=parseInt(Math.random()*51);
+			var numberInput=0;
+//			var times=6;
+			console.log("目标数是："+numberRight);
+			oBtn.onclick=function(){
+				numberInput=Number(oNum.value);
+				if(numberInput>numberRight){
+					console.log("本次输入是："+numberInput+"，有点大");
+					oInfo.innerHTML+="<br>本次输入是："+numberInput+"，有点大";
+				}else if(numberInput<numberRight){
+					oInfo.innerHTML+="<br>本次输入是："+numberInput+"，有点小";
+				}else if(numberInput==numberRight){
+					oInfo.innerHTML+="<br>本次输入是："+numberInput+"，祝贺你，蒙对了！";
+				}
+				if(times--<=0){
+					oInfo.innerHTML+="<br>次数已用完！";
+				}
+			}
+		</script>
+	</body>
+</html>
